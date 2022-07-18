@@ -1,6 +1,6 @@
 {
   "name": "<%=localName%>",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:custom": "uni -p",
