@@ -1,0 +1,100 @@
+// declare module '@vue/runtime-core' {
+//   export interface GlobalComponents {
+//     // 基础组件
+//     ['u-icon']: typeof import('./types/icon')['Icon']
+//     ['u-image']: typeof import('./types/image')['Image']
+//     ['u--image']: typeof import('./types/image')['Image']
+//     ['u-button']: typeof import('./types/button')['Button']
+//     ['u-text']: typeof import('./types/text')['Text']
+//     ['u-row']: typeof import('./types/row')['Row']
+//     ['u-col']: typeof import('./types/col')['Col']
+//     ['u-cell']: typeof import('./types/cell')['Cell']
+//     ['u-cell-group']: typeof import('./types/cellGroup')['CellGroup']
+//     ['u-badge']: typeof import('./types/badge')['Badge']
+//     ['u-tag']: typeof import('./types/tag')['Tag']
+//     ['u-loading-icon']: typeof import('./types/loadingIcon')['LoadingIcon']
+//     ['u-loading-page']: typeof import('./types/loadingPage')['LoadingPage']
+//
+//     // 表单组件
+//     ['u-form']: typeof import('./types/form')['Form']
+//     ['u-form-item']: typeof import('./types/formItem')['FormItem']
+//     ['u-calendar']: typeof import('./types/calendar')['Calendar']
+//     ['u-keyboard']: typeof import('./types/keyboard')['Keyboard']
+//     ['u-picker']: typeof import('./types/picker')['Picker']
+//     ['u-datetime-picker']: typeof import('./types/datetimePicker')['DatetimePicker']
+//     ['u-rate']: typeof import('./types/rate')['Rate']
+//     ['u-search']: typeof import('./types/search')['Search']
+//     ['u-number-box']: typeof import('./types/numberBox')['NumberBox']
+//     ['u-upload']: typeof import('./types/upload')['Upload']
+//     ['u-code']: typeof import('./types/code')['Code']
+//     ['u-input']: typeof import('./types/input')['Input']
+//     ['u-textarea']: typeof import('./types/textarea')['Textarea']
+//     ['u-checkbox']: typeof import('./types/checkbox')['Checkbox']
+//     ['u-checkbox-group']: typeof import('./types/checkboxGroup')['CheckboxGroup']
+//     ['u-radio']: typeof import('./types/radio')['Radio']
+//     ['u-radio-group']: typeof import('./types/radioGroup')['RadioGroup']
+//     ['u-switch']: typeof import('./types/switch')['Switch']
+//     ['u-slider']: typeof import('./types/slider')['Slider']
+//     ['u-album']: typeof import('./types/album')['Album']
+//
+//     // 数据组件
+//     ['u-list']: typeof import('./types/list')['List']
+//     ['u-list-item']: typeof import('./types/listItem')['ListItem']
+//     ['u-line-progress']: typeof import('./types/lineProgress')['LineProgress']
+//     ['u-count-down']: typeof import('./types/countDown')['CountDown']
+//     ['u-count-to']: typeof import('./types/countTo')['CountTo']
+//
+//     // 反馈组件
+//     ['u-tooltip']: typeof import('./types/tooltip')['Tooltip']
+//     ['u-action-sheet']: typeof import('./types/actionSheet')['ActionSheet']
+//     ['u-alert']: typeof import('./types/alert')['Alert']
+//     ['u-toast']: typeof import('./types/toast')['Toast']
+//     ['u-notice-bar']: typeof import('./types/noticeBar')['NoticeBar']
+//     ['u-notify']: typeof import('./types/notify')['Notify']
+//     ['u-swipe-action']: typeof import('./types/swipeAction')['SwipeAction']
+//     ['u-swipe-action-item']: typeof import('./types/swipeActionItem')['SwipeActionItem']
+//     ['u-collapse']: typeof import('./types/collapse')['Collapse']
+//     ['u-collapse-item']: typeof import('./types/collapseItem')['CollapseItem']
+//     ['u-popup']: typeof import('./types/popup')['Popup']
+//     ['u-modal']: typeof import('./types/modal')['Modal']
+//
+//     // 布局组件
+//     ['u-scroll-list']: typeof import('./types/scrollList')['ScrollList']
+//     ['u-line']: typeof import('./types/line')['Line']
+//     ['u-overlay']: typeof import('./types/overlay')['Overlay']
+//     ['u-no-network']: typeof import('./types/noNetwork')['NoNetwork']
+//     ['u-grid']: typeof import('./types/grid')['Grid']
+//     ['u-grid-item']: typeof import('./types/gridItem')['GridItem']
+//     ['u-swiper']: typeof import('./types/swiper')['Swiper']
+//     ['u-skeleton']: typeof import('./types/skeleton')['Skeleton']
+//     ['u-sticky']: typeof import('./types/sticky')['Sticky']
+//     ['u-divider']: typeof import('./types/divider')['Divider']
+//
+//     // 导航组件
+//     ['u-tabbar']: typeof import('./types/tabbar')['Tabbar']
+//     ['u-tabbar-item']: typeof import('./types/tabbarItem')['TabbarItem']
+//     ['u-back-top']: typeof import('./types/backTop')['BackTop']
+//     ['u-navbar']: typeof import('./types/navbar')['Navbar']
+//     ['u-tabs']: typeof import('./types/tabs')['Tabs']
+//     ['u-subsection']: typeof import('./types/subsection')['Subsection']
+//     ['u-index-list']: typeof import('./types/indexList')['IndexList']
+//     ['u-index-item']: typeof import('./types/indexItem')['IndexItem']
+//     ['u-index-anchor']: typeof import('./types/indexAnchor')['IndexAnchor']
+//     ['u-steps']: typeof import('./types/steps')['Steps']
+//     ['u-steps-item']: typeof import('./types/stepsItem')['StepsItem']
+//     ['u-empty']: typeof import('./types/empty')['Empty']
+//
+//     // 其他组件
+//     ['u-parse']: typeof import('./types/parse')['Parse']
+//     ['u-code-input']: typeof import('./types/codeInput')['CodeInput']
+//     ['u-load-more']: typeof import('./types/loadMore')['LoadMore']
+//     ['u-read-more']: typeof import('./types/readMore')['ReadMore']
+//     ['u-gap']: typeof import('./types/gap')['Gap']
+//     ['u-avatar']: typeof import('./types/avatar')['Avatar']
+//     ['u-avatar-group']: typeof import('./types/avatarGroup')['AvatarGroup']
+//     ['u-link']: typeof import('./types/link')['Link']
+//     ['u-transition']: typeof import('./types/transition')['Transition']
+//   }
+// }
+//
+// export {}
