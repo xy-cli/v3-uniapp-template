@@ -1,0 +1,142 @@
+$uni-width: 1000rpx;
+
+/* 主题颜色变量 */
+$uni-color: #0090F5;
+
+/* 颜色变量 */
+
+/* 行为相关颜色 */
+$uni-color-primary: #007aff;
+$uni-color-success: #30c690;
+$uni-color-warning: #FF9064;
+$uni-color-error: #E9614F;
+
+/* 行为相关颜色 */
+//$uni-color: #3E82E0;
+$uni-color: #4FC3FF;
+//$uni-color2: #9080DF;
+$uni-color2: #4FC3FF;
+$uni-color-bg: #f5f5f8;
+
+/* 文字基本颜色 */
+$uni-text-color: rgba(8, 28, 56, .85); //基本色
+$uni-text-color-hint: rgba(48, 198, 144, .39); //基本色 提示
+
+/* 边框颜色 */
+$uni-border-color: rgba(62, 130, 224, .5);
+
+/* 尺寸变量 */
+
+/* 文字尺寸 */
+$uni-font-size-sm:24rpx;
+$uni-font-size-base:28rpx;
+$uni-font-size-lg:32rpx;
+
+/* 图片尺寸 */
+$uni-img-size-sm:40rpx;
+$uni-img-size-base:52rpx;
+$uni-img-size-lg:80rpx;
+
+/* Border Radius */
+$uni-border-radius-sm: 4rpx;
+$uni-border-radius-base: 12rpx;
+$uni-border-radius-xm: 24rpx;
+$uni-border-radius-lg: 33rpx;
+$uni-border-radius-circle: 50%;
+$uni-border-box-shadow: 0 0 16rpx 0 rgba(8,28,56,0.07);
+$uni-btn-box-shadow: 0 8rpx 10rpx 0 rgba(121,130,220,0.32);
+
+/* 水平间距 */
+$uni-spacing-row-sm: 10px;
+$uni-spacing-row-base: 20rpx;
+$uni-spacing-row-lg: 30rpx;
+
+/* 垂直间距 */
+$uni-spacing-col-sm: 8rpx;
+$uni-spacing-col-base: 16rpx;
+$uni-spacing-col-lg: 24rpx;
+
+/* 透明度 */
+$uni-opacity-disabled: 0.3; // 组件禁用态的透明度
+
+/* 文章场景相关 */
+$uni-color-title: #2C405A; // 文章标题颜色
+$uni-font-size-title:40rpx;
+$uni-color-subtitle: #555555; // 二级标题颜色
+$uni-font-size-subtitle:36rpx;
+$uni-color-paragraph: #3F536E; // 文章段落颜色
+$uni-font-size-paragraph:30rpx;
+
+//背景图片
+@mixin bis($url) {
+  background: {
+    image:url($url);
+    repeat: no-repeat;
+    size: 100% 100%;
+  }
+}
+
+//fixed位置
+@mixin fixed($position, $rem ) {
+  position: fixed;
+  @if $position == top {
+    top: $rem;
+    right: 0;
+    left: 0;
+  } @else if $position == bottom {
+    right: 0;
+    bottom: $rem;
+    left: 0;
+  } @else if $position == left {
+    top: 0;
+    bottom: 0;
+    left: $rem;
+  } @else if $position == right {
+    top: 0;
+    right: $rem;
+    bottom: 0;
+  } @else if $position == center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+  }
+}
+
+//定位居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin marginCenter($margin: 34rpx) {
+  width: calc(100% - $margin - $margin);
+  height: auto;
+  margin: 0 auto;
+}
+
+//宽and高
+@mixin wh($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: "Microsoft YaHei") {
+  font: #{$size}/#{$line-height} $family;
+}
+
+// row flex: 默认垂直水平居中
+@mixin flexRow($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+// col flex: 默认垂直水平居中
+@mixin flexCol($justify: center, $align: center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}

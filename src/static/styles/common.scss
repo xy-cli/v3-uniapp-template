@@ -1,0 +1,30 @@
+body,html{
+  width:100%;
+  height:auto;
+}
+
+/* 项目渐变色 */
+.btn-gradient {
+  background: linear-gradient(270deg, $uni-color 0%, $uni-color2 100%);
+  box-shadow: $uni-btn-box-shadow;
+}
+/* 单行文字隐藏 */
+.elp{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+/* 加载更多 u-loadmore 样式高度设置 */
+.load-more{
+  height: 100rpx!important;
+}
+/* 按钮置灰 */
+.disabled{
+  opacity: .3;
+  filter: grayscale(100%);
+}
+/* u-search icon 搜索兼容 */
+[type="search"]::-webkit-search-decoration {
+  display: none;
+}
