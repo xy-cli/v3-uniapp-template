@@ -6,32 +6,6 @@
 
 本项目集众多项目的优点，打造最适合团队协作开发的项目模板。
 
-在线预览地址：[https://oyjt.github.io/uniapp-vue3-template/](https://oyjt.github.io/uniapp-vue3-template/)
-
-### 特性
-
-- [x] 集成uview-plus3.0 ui库
-- [x] 支持多环境打包构建
-- [x] 使用pinia状态管理
-- [x] 封装网络请求，并支持Typescript
-- [x] 支持路径别名
-- [x] 支持自动加载组件和API
-- [x] 自动校验git提交代码格式
-- [x] 集成ESLint、StyleLint、EditorConfig代码格式规范
-- [x] Typescript支持
-- [x] 集成iconify图标库
-- [x] 集成z-paging下拉刷新功能
-- [x] 添加页面跳转拦截，登录权限校验
-- [x] 支持token无痛刷新
-- [x] 支持持续集成
-- [x] 项目分包
-- [x] 集成小程序隐私协议授权组件
-- [x] 项目构建自动删除本地图片并替换本地图片路径为线上图片
-
-### VScode插件推荐
-- 可以为pages.json、manifest.json等提供语法提示和校验工作。[uni-app-schemas](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-app-schemas-vscode)
-- uni-app 基本能力代码片段。[uni-app-snippets](https://marketplace.visualstudio.com/items?itemName=uni-helper.uni-app-snippets-vscode)
-- 一键创建页面、组件、分包，个人用不习惯。uni-create-view(https://marketplace.visualstudio.com/items?itemName=mrmaoddxxaa.create-uniapp-view)
 
 
 ### 目录结构
@@ -115,7 +89,7 @@ hooks
 ### 页面管理
 ```
 pages              
-├ common           公共页面（分包common）
+├ common           公共页面
 │  ├ login         
 │  │  └ index.vue  
 │  └ webview       
@@ -184,56 +158,9 @@ pnpm build:h5-prod
 pnpm build:mp-weixin-prod
 ```
 
-### 代码提交
-```bash
-pnpm cz
-```
-
 ### 更新uniapp版本
 
 更新uniapp相关依赖到最新正式版
 ```bash
 npx @dcloudio/uvm@latest
 ```
-
-### 注意事项
-1. 如果项目中不需要压缩图片，可以移除`vite-plugin-imagemin`插件后再初始化，以避免由于网路问题造成初始化报错的情况
-2. 自动构建处理本地图片资源，使用了`vite-plugin-clean-build`和`vite-plugin-replace-image-url`这两个插件，默认不开启相关功能，如果需要使用再`build/vite/plugins/index.ts`文件中移除相关注释即可
-3. 使用`vite-plugin-replace-image-url`插件，想要图片自动替换生效，需要在项目中使用绝对路径引入图片资源，如下示例所示。
-
-    示例一：style中的图片使用
-    ```
-    <template>
-      <view :style="`background-image: url('${bgImg}')`">
-        ...
-      </view>
-    </template>
-    <script setup lang="ts">
-    import bgImg from '@/static/images/bg_img.png';
-    </script>
-    ```
-
-    示例二：js中的图片使用
-
-    ```
-    <script setup lang="ts">
-    import walletIcon from '@/static/images/icon_wallet.png';
-    const menuList = [
-      {
-        name: 'wallet',
-        title: '钱包',
-        icon: walletIcon,
-      },
-      ...
-    ];
-    </script>
-    ```
-
-    示例二：css中的图片使用
-    ```
-    <style lang="scss">
-    .icon {
-      background-image: url('@/static/images/icon.png')
-    }
-    </style>
-    ```
