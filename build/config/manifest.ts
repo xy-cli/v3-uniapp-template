@@ -87,7 +87,7 @@ const data = {
   'h5':
     {
       publicPath: '',
-      title: 'v3-uni-app',
+      title: '<%=localName%>',
       router:
         {
           mode: 'history',
