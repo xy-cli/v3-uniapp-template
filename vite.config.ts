@@ -1,27 +1,64 @@
-import { resolve } from 'node:path'
-import { defineConfig } from 'vite'
-import type { UserConfig } from 'vite'
-import createVitePlugins from './build/vite/plugins'
-import proxy from './build/vite/proxy'
+import { defineConfig, loadEnv } from "vite";
+import type { ConfigEnv, UserConfig } from "vite";
+import { resolve } from "path";
+import { wrapperEnv } from "./build/getEnv";
+import { createProxy } from "./build/proxy";
+import { createVitePlugins } from "./build/plugins";
+import pkg from "./package.json";
+import dayjs from "dayjs";
 
-// https://vitejs.dev/config/
-export default defineConfig((): UserConfig => {
-  const isBuild = process.env.NODE_ENV === 'production'
+const { dependencies, devDependencies, name, version } = pkg;
+const __APP_INFO__ = {
+  pkg: { dependencies, devDependencies, name, version },
+  lastBuildTime: dayjs().format("YYYY-MM-DD HH:mm:ss")
+};
+
+// @see: https://vitejs.dev/config/
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
+  const root = process.cwd();
+  const env = loadEnv(mode, root);
+  const viteEnv = wrapperEnv(env);
+
   return {
+    base: viteEnv.VITE_PUBLIC_PATH,
+    root,
     resolve: {
-      // https://cn.vitejs.dev/config/#resolve-alias
       alias: {
-        // 设置别名
-        '@': resolve(__dirname, './src'),
-      },
+        "@": resolve(__dirname, "./src"),
+        "vue-i18n": "vue-i18n/dist/vue-i18n.cjs.js"
+      }
     },
-    // vite 相关配置
+    define: {
+      __APP_INFO__: JSON.stringify(__APP_INFO__)
+    },
     server: {
-      port: 8080,
-      host: true,
-      open: true,
-      proxy,
+      host: "0.0.0.0",
+      port: viteEnv.VITE_PORT,
+      open: viteEnv.VITE_OPEN,
+      cors: true,
+      // Load proxy configuration from .env.development
+      proxy: createProxy(viteEnv.VITE_PROXY)
     },
-    plugins: createVitePlugins(isBuild),
-  }
-})
+    plugins: createVitePlugins(viteEnv),
+    esbuild: {
+      pure: viteEnv.VITE_DROP_CONSOLE ? ["console.log", "debugger"] : []
+    },
+    build: {
+      outDir: "dist",
+      minify: "esbuild",
+      sourcemap: true,
+      // 禁用 gzip 压缩大小报告，可略微减少打包时间
+      reportCompressedSize: false,
+      // 规定触发警告的 chunk 大小
+      chunkSizeWarningLimit: 2000,
+      rollupOptions: {
+        output: {
+          // Static resource classification and packaging
+          chunkFileNames: "assets/js/[name]-[hash].js",
+          entryFileNames: "assets/js/[name]-[hash].js",
+          assetFileNames: "assets/[ext]/[name]-[hash].[ext]"
+        }
+      }
+    }
+  };
+});

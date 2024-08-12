@@ -1,0 +1,88 @@
+{
+  "easycom": {
+    "autoscan": true,
+    // 是否自动扫描组件
+    "custom": {
+      "^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+      "^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/tab/home/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/tab/list/index",
+      "style": {
+        "navigationBarTitleText": "列表"
+      }
+    },
+    {
+      "path": "pages/tab/user/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/common/login/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      },
+      "navigationStyle": "custom"
+    },
+    {
+      "path": "pages/common/webview/index",
+      "style": {
+        "navigationBarTitleText": "网页"
+      }
+    }
+  ],
+  "subPackages": [],
+  // 分包
+  "globalStyle": {
+    "maxWidth": 500,
+    "rpxCalcMaxDeviceWidth": 500,
+    "rpxCalcIncludeWidth": 750,
+    // rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx，默认值为 750
+    // #ifndef APP-PLUS
+    "navigationStyle": "custom",
+    // #endif
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#808b9a",
+    "selectedColor": "#4782e0",
+    "borderStyle": "white",
+    "fontSize": "12px",
+    "backgroundColor": "#f9fafc",
+    "list": [
+      {
+        "pagePath": "pages/tab/home/index",
+        "iconPath": "https://s21.ax1x.com/2024/06/14/pkdBqDP.png",
+        "selectedIconPath": "https://s21.ax1x.com/2024/06/14/pkdBbut.png",
+        "text": "首页",
+        "customIcon": false
+      },
+      {
+        "pagePath": "pages/tab/list/index",
+        "iconPath": "https://s21.ax1x.com/2024/06/14/pkdBqDP.png",
+        "selectedIconPath": "https://s21.ax1x.com/2024/06/14/pkdBbut.png",
+        "text": "列表",
+        "customIcon": false
+      },
+      {
+        "pagePath": "pages/tab/user/index",
+        "iconPath": "https://s21.ax1x.com/2024/06/14/pkdBqDP.png",
+        "selectedIconPath": "https://s21.ax1x.com/2024/06/14/pkdBbut.png",
+        "text": "个人中心",
+        "customIcon": false
+      }
+    ]
+  }
+}

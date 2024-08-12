@@ -7,15 +7,15 @@
 </template>
 
 <script setup lang="ts">
-const title = ref<string>('列表')
+const title = ref<string>("列表");
 
 onShow(() => {
-  console.log('<%=localName%>')
-})
+  console.log("<%=localName%>");
+});
 </script>
 
 <style scoped lang="scss">
-.home{
+.home {
   @include wh(100%, 100vh);
   @include flexCol(center);
   font-size: 40rpx;

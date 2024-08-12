@@ -19,13 +19,3 @@ dist
 *.njsproj
 *.sln
 *.sw?
-#json
-src/pages.json
-src/manifest.json
-#user
-.hbuilderx
-unpackage
-/stats.html
-# pnpm-lock.yaml
-yarn.lock
-package-lock.json

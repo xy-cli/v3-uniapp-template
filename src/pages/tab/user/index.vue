@@ -1,11 +1,7 @@
 <template>
   <view class="page-wrap">
     <view class="avatar">
-      <up-avatar
-        text="鱼"
-        fontSize="18"
-        randomBgColor
-      ></up-avatar>
+      <up-avatar font-size="18" random-bg-color text="鱼"></up-avatar>
     </view>
     <view>
       <u-cell-group>
@@ -20,11 +16,10 @@
   </view>
 </template>
 
-<script setup lang="ts">
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.avatar{
+.avatar {
   @include flexCol(center);
   margin: 80rpx;
 }

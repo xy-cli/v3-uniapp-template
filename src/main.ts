@@ -1,29 +1,19 @@
-import { createSSRApp } from 'vue'
-
+import { createSSRApp } from "vue";
+import App from "./App.vue";
+// pinia store
+import pinia from "@/stores";
 // 引入uview-plus
-import uviewPlus from 'uview-plus'
-import App from '@/App.vue'
+import uviewPlus from "uview-plus";
 
-// 引入状态管理
-import setupStore from '@/store'
+import { initRequest } from "./api/index";
 
-// 引入请求封装
-import setupRequest from '@/utils/request'
-
-// 权限管理
-import '@/permission'
-
-// #ifdef VUE3
-export function createApp() {
-  const app = createSSRApp(App)
-  app.use(uviewPlus)
-  // 状态管理
-  setupStore(app)
-  // 网络请求
-  setupRequest()
-
+export const createApp = () => {
+  const app = createSSRApp(App);
+  // 引入请求封装
+  initRequest();
+  app.use(uviewPlus);
+  app.use(pinia);
   return {
-    app,
-  }
-}
-// #endif
+    app
+  };
+};

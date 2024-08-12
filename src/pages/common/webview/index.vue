@@ -1,14 +1,14 @@
 <template>
   <view class="webview">
-    <web-view v-if="url" style="height: 100vh" :src="url"/>
-    <u-empty v-else mode="page" marginTop="100" text="链接配置错误"/>
+    <web-view v-if="url" :src="url" style="height: 100vh" />
+    <u-empty v-else margin-top="100" mode="page" text="链接配置错误" />
   </view>
 </template>
 
 <script setup lang="ts">
-const url = ref<string>('')
+const url = ref<string>("");
 
 onLoad((params: any) => {
-  url.value = params.url.includes('http') ? params.url : ''
-})
+  url.value = params.url.includes("http") ? params.url : "";
+});
 </script>

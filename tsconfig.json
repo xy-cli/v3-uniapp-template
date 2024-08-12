@@ -1,38 +1,69 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.json",
+  //  "compilerOptions": {
+  //    "sourceMap": true,
+  //    "baseUrl": ".",
+  //    "paths": {
+  //      "@/*": ["./src/*"]
+  //    },
+  //    "lib": ["esnext", "dom"],
+  //    "types": ["@dcloudio/types"]
+  //  },
   "compilerOptions": {
     "sourceMap": true,
-    "baseUrl": ".",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
     "module": "ESNext",
-    "target": "es2016",
-    "lib": ["DOM", "ESNext"],
-    "strict": true,
+    "moduleResolution": "Node",
+    "types": [
+      "@dcloudio/types",
+      "vite/client"
+    ],
+    /* Strict Type-Checking Options */
+    "strict": true
+    /* Enable all strict type-checking options. */,
+    "noImplicitAny": false
+    /* Raise error on expressions and declarations with an implied 'any' type. */,
+    // "strictNullChecks": true,              /* Enable strict null checks. */
+    // "strictFunctionTypes": true,           /* Enable strict checking of function types. */
+    // "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+    // "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. */
+    // "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type. */
+    // "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. */
+
     "jsx": "preserve",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
-    },
-    "types": ["@dcloudio/types", "@uni-helper/uni-app-types", "miniprogram-api-typings", "node"]
+      "@": [
+        "src"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "types/**/*.d.ts",
-    "types/**/*.ts",
-    "build/**/*.ts"
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts"
   ],
-  "exclude": ["dist", "node_modules", "uni_modules"],
-  // uni-app Component type prompt
-  "vueCompilerOptions": {
-    "nativeTags": ["block", "component", "template", "slot"]
-  }
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.js"
+  ]
 }
 
